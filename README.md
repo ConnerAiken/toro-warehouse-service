@@ -1,4 +1,5 @@
 # TORO WAREHOUSE SERVICE
+[![Build Status](https://travis-ci.org/ConnerAiken/toro-warehouse-service.svg?branch=master)](https://travis-ci.org/ConnerAiken/toro-warehouse-service)
 
 ## Dependencies 
 
