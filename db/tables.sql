@@ -1,4 +1,19 @@
 
+  CREATE TABLE public.companies (
+	symbol varchar(5) PRIMARY KEY,
+	"name" varchar(500) NOT NULL,
+    exchange varchar(500) NOT NULL,
+    industry varchar(500) NOT NULL,
+    website varchar(500) NOT NULL,
+    "description" varchar(500) NOT NULL,
+    issueType varchar(500) NOT NULL,
+    sector varchar(500) NOT NULL,
+    securityName varchar(500) NOT NULL,
+    tags JSON not null,
+    employees BIGINT NOT NULL,
+    ceo varchar(500) NOT NULL
+  )
+
   CREATE TABLE public.companies_quotes (
 	symbol varchar(5) PRIMARY KEY,
 	"name" varchar(500) NOT NULL,
