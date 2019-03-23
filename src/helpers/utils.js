@@ -1,11 +1,11 @@
 export default {
     log(msg, type = 0) {
         if(type === 1) {
-            console.warn(`[${process.env.appName}] ${msg}`);
+            console.warn(`[${process.env.APP_NAME}] ${msg}`);
         }else if(type === 2) {
-            console.error(`[${process.env.appName}] ${msg}`);
+            console.error(`[${process.env.APP_NAME}] ${msg}`);
         }else {
-            console.log(`[${process.env.appName}] ${msg}`);
+            console.log(`[${process.env.APP_NAME}] ${msg}`);
         }
     },
     loadENV() {
@@ -18,8 +18,6 @@ export default {
             this.log("Could not find .env file, using default env file..");
         }else if(config.error && defaultConfig.error) {
             this.log("Could not find any .env files, please set one up!", 1);
-        }else {
-            this.log("Successfully loaded .env variables..");
         }
     }
 }

@@ -6,8 +6,9 @@
   "directories": {
     "test": "tests"
   },
-  "scripts": { 
+  "scripts": {
     "start": "babel-node src/index.js  --presets=env,stage-0",
+    "start:test": "babel-node src/test.js  --presets=env,stage-0",
     "start:docker": "docker-compose up",
     "upgradeDeps": "ncu -u"
   },
@@ -33,5 +34,9 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "dotenv": "^6.2.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "moment": "^2.24.0"
   }
 }
