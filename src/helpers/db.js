@@ -15,6 +15,7 @@ export default class Db {
             const results = await this.client.query(sql, params);
             return results;
         } catch(e) {
+            console.log("Could not connect to database!");
             console.log(e);
         }
     }

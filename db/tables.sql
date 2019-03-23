@@ -14,6 +14,11 @@ CREATE TABLE public.companies (
     ceo varchar(500) NULL
   );
 
+CREATE TABLE public.target_companies (
+  symbol varchar(5) PRIMARY KEY,
+  parsed numeric DEFAULT 0
+)
+
  CREATE TABLE public.companies_quotes (
 	symbol varchar(5) PRIMARY KEY,
 	"name" varchar(500) NULL,
