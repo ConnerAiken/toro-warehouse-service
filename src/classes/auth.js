@@ -2,7 +2,7 @@ import moment from "moment";
 import crypto from "crypto"; 
 import path from "path";
 import dotenv from "dotenv"; 
-import utils from "./utils";  
+import utils from "./../helpers/utils";  
  
 global.path = path;
 global.dotenv = dotenv; 

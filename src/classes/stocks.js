@@ -1,5 +1,5 @@
 import https from "https";
-import utils from "./utils";  
+import utils from "./../helpers/utils";  
 import path from "path";
 import dotenv from "dotenv";  
 import Auth from "./auth";

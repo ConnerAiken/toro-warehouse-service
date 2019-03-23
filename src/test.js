@@ -2,7 +2,7 @@
 import path from "path";
 import dotenv from "dotenv";
 import utils from "./helpers/utils.js"; 
-import Auth from "./helpers/auth.js";
+import Auth from "./classes/auth.js";
 
 global.path = path;
 global.dotenv = dotenv;

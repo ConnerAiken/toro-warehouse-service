@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import axios from "axios";  
  
 import utils from "./helpers/utils";  
-import Stocks from "./helpers/stocks"; 
+import Stocks from "./classes/stocks"; 
  
 global.path = path;
 global.dotenv = dotenv; 
