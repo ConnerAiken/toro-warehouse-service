@@ -7,3 +7,4 @@ global.dotenv = dotenv;
 
 utils.loadENV();
  
+console.log(process.env);

@@ -1,34 +1,29 @@
 {
-  "name": "react-node-webpack-boilerplate",
-  "version": "0.0.0-0",
-  "description": "React/Nodejs + Webpack",
-  "main": "build/bundle.js",
+  "name": "toro-warehouser",
+  "version": "1.0.0-0",
+  "description": "Reads stock market data and warehouses it",
+  "main": "src/index.js",
   "directories": {
     "test": "tests"
   },
-  "scripts": {
-    "build": "webpack --config webpack.common.js --mode production",
-    "dev": "webpack-dev-server --config webpack.common.js --mode development --open --watch",
-    "test": "echo \"Error: no test specified but lets exit with success so travis builds\" && exit 0",
-    "prestart": "npm run build",
+  "scripts": { 
     "start": "babel-node src/index.js  --presets=env,stage-0",
     "start:docker": "docker-compose up",
-    "upgradeDeps": "ncu -u",
-    "prepublishOnly": "npm run build"
+    "upgradeDeps": "ncu -u"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FittedTech/react-node-webpack.git"
   },
   "keywords": [
-    "node",
+    "toro"
   ],
   "author": "Conner Aiken",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FittedTech/react-node-webpack/issues"
+    "url": "https://github.com/ConnerAiken/toro-warehouse-microservice/issues"
   },
-  "homepage": "https://github.com/FittedTech/react-node-webpack#readme",
+  "homepage": "https://github.com/ConnerAiken/toro-warehouse-microservice",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -37,6 +32,6 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "dotenv": "^6.2.0",
+    "dotenv": "^6.2.0"
   }
 }
