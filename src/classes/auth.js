@@ -2,7 +2,8 @@ import moment from "moment";
 import crypto from "crypto"; 
 import path from "path";
 import dotenv from "dotenv"; 
-import utils from "./../helpers/utils";  
+import utils from "./../helpers/utils"; 
+import https from "https"; 
  
 global.path = path;
 global.dotenv = dotenv; 
@@ -21,6 +22,11 @@ export default class Auth {
         this.dates.datestamp = this.dates.ts.format("YYYYMMDD");  
         this.options = this.getDefaultOptions(); 
         this.verifyKeys();  
+
+        return {
+            buildRequestUrl: this.buildRequestUrl.bind(this),
+            request: this.request.bind(this)
+        }
     }  
 
     getDefaultOptions(uri = '/', queryString = 'param=1') {
@@ -40,6 +46,17 @@ export default class Auth {
         }
     }
     
+    request(method, url, payload) {
+        https.request(this.buildRequestUrl(method, this.host + url), function(res) {
+            res.setEncoding('utf8');
+            res.on('data', function(chunk) {
+                var parsed = JSON.parse(chunk);
+                console.log(parsed);
+            }, payload);
+        });
+        req.end();
+    }
+
     buildRequestUrl(method, base) {
         return method + '\n' + 
                                   base + '\n' + 
@@ -59,7 +76,7 @@ export default class Auth {
     }
 
     get canonicalHeaders() { 
-        return 'host:' + this.host + '\n' + 'x-iex-date:' + this.iexdate + '\n';
+        return 'host:' + this.host + '\n' + 'x-iex-date:' + this.dates.iexdate + '\n';
     } 
 
     get credScope() {
@@ -69,7 +86,7 @@ export default class Auth {
         return crypto.createHash('sha256').update('').digest('hex');
     }
 
-    get stringToSign() {
+    get stringToSign() { 
         return this.algorithm + '\n' +  
                this.dates.iexdate + '\n' +  
                this.credScope + '\n' + 
@@ -83,8 +100,8 @@ export default class Auth {
         return this.signToken(this.secret_key, this.dates.datestamp);
     }
 
-    get requestHeaders() {
-        return {'x-iex-date': this.iexdate, 'Authorization': this.authHeader};
+    get requestHeaders() { 
+        return {'x-iex-date': this.dates.iexdate, 'Authorization': this.authHeader};
     }
 
     get authHeader() { 

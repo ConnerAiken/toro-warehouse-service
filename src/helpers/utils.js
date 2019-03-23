@@ -18,6 +18,6 @@ export default {
             this.log("Could not find .env file, using default env file..");
         }else if(config.error && defaultConfig.error) {
             this.log("Could not find any .env files, please set one up!", 1);
-        }
+        } 
     }
 }
