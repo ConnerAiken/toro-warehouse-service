@@ -1,8 +1,4 @@
-# MERN Boilerplate - MongoDB, Express, React, NodeJS
-
-## Status
-
- [![Build Status](https://travis-ci.org/ConnerAiken/mern-boilerplate.svg?branch=master)](https://travis-ci.org/ConnerAiken/mern-boilerplate)
+# TORO WAREHOUSE SERVICE
 
 ## Dependencies 
 
@@ -25,18 +21,7 @@
    - Production Bundle (Client only): `npm run build` then import the client code somewhere
    - Standalone (Client+Server): `npm start` then open `http://localhost:8080` in a browser
    - Dockerized /w MongoDB: `npm run start:docker` - more to come
- 
-## Assumptions
-
-- You have all dependencies installed and are using NPM or Yarn
-- This boilerplate was developed using linux mint (Ubuntu 14 - Xenial), it should be cross platform so please report any issues using the github issue tracker.
-- If you run the 'npm run updateDeps' script, you will need to have npm-check-updates globally installed: `npm install -g npm-check-updates`   
-- Your user account is part of the docker group for sudo access
-
-## Transpiling/Bundling/Polyfills
-
-We currently use babel configured with preset-env, preset-react and preset-stage-0. Eventually the polyfill.io cdn will be primarily used.
-
+  
 ## Resources/Sources
 
 ### Lifecycle scripts
@@ -46,21 +31,4 @@ We currently use babel configured with preset-env, preset-react and preset-stage
 - npm run upgradeDeps
 - npm run build
 - npm test
-
-### Credits
-[Valentino G](https://www.valentinog.com/blog/webpack-4-tutorial/)
-
-## TODO
-
-- [ ] Add polyfill.io to html-webpack-plugin
-- [ ] Add mocha/webdriverio tests
-- [ ] Using webpack-merge or lodash for webpack.*env*.js files
-- [ ] Add documentation library
-- [ ] Setup ESLint
-- [ ] Add colors to logging
-- [ ] Fix load order (DOM flash)
-- [ ] Add deployment command for dockerized mongodb
-- [ ] Integrate docker commands into travis?
-- [ ] Add webpack bundle analyzer npm script (pipe --stats > stats.json directly into analyzer)
-- [ ] Setup provisioning of mongodb
-- [ ] Add database connectors
+ 
