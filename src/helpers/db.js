@@ -4,14 +4,12 @@ const { Client } = require('pg');
 
 export default class Db {
     constructor() {
-        this.client = new Client({ssl: true});  
+        this.client = new Client({ssl: true});   
+        return this;
     }
 
     async query(sql = 'SELECT \'1\'', params = []) {  
-        try {  
-            if(!this.client._connected) 
-                await this.client.connect(); 
- 
+        try {   
             const results = await this.client.query(sql, params);
             return results;
         } catch(e) {
