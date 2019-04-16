@@ -1,6 +1,7 @@
  CREATE TABLE public.logos (
    symbol varchar(15)  PRIMARY KEY,
-   base64_img text,
+   base64 text,
+   url text,
    quality_score bigint
  ); 
 
@@ -55,10 +56,10 @@ CREATE TABLE public.social_sentiment (
   symbol varchar(15) PRIMARY KEY,
   "date" date,
   minute varchar(2),
-  sentiment bigint,
-  totalScores bigint,
-  positive bigint,
-  negative bigint
+  sentiment float,
+  totalScores float,
+  positive float,
+  negative float
 );
 
 CREATE TABLE public.companies (

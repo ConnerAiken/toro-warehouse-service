@@ -10,6 +10,8 @@
     "start": "npm run start:symbols && npm run start:companyInfo",
     "start:symbols": "babel-node src/symbols.js  --presets=env",
     "start:companyInfo": "babel-node src/companyInfo.js  --presets=env",
+    "start:socialSentiments": "babel-node src/socialSentiments.js  --presets=env",
+    "start:logos": "babel-node src/logos.js  --presets=env",
     "start:test": "babel-node src/test.js  --presets=env",
     "start:docker": "docker-compose up",
     "upgradeDeps": "ncu -u"

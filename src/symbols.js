@@ -18,7 +18,7 @@ db.client.connect()
 		// Copy symbols into array then archive them
 		companyData = [...companies];
 		jsonfile.writeFileSync(`${process.cwd()}/output/symbols.json`, companyData);
-		console.log(` Archived the symbols to: ${process.cwd()}/output/symbols.json, now starting upsert promise chain.`);
+		jsonfile.writeFileSync(`${process.cwd()}/output/companyInfo.txt`, `${moment().format('yyyy-mm-dd:hh:mm:ss')} - Archived the symbols to: ${process.cwd()}/output/symbols.json, now starting upsert promise chain.`, { flag: 'a' });
 
 		// Filter applicable companies so api calls dont randomly fail
 		const applicableCompanies = companies.filter(company => company.isEnabled);
